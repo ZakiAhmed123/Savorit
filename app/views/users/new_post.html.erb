@@ -1,0 +1,43 @@
+
+<%= link_to "Home", posts_path %>
+<div class="image-editor">
+  <div id="title">Crop and Resize </div>
+  <input type="file" class="cropit-image-input">
+  <div id="imagePreview" class="cropit-preview" ></div>
+  <div class="image-size-label">
+    Resize image
+  </div>
+  <input type="range" class="cropit-image-zoom-input">
+  <button class="rotate-ccw">Rotate counterclockwise</button>
+  <button class="rotate-cw">Rotate clockwise</button>
+
+  <button class="export">Export</button>
+</div>
+
+<button class="Nashville">Nashville</button>
+<button class="1977"> 1977</button>
+<button class="Brannan">Brannan</button>
+<button class="Gotham">Gotham</button>
+<button class="Hefe">Hefe</button>
+<button class="Inkwell">Inkwell</button>
+<button class="LordKelvin">Lord Kelvin</button>
+<button class="xpro2">X PRO II</button>
+<div class="form">
+<%= form_for @post do |f| %>
+<div class="">
+<%= f.text_field :text, placeholder:"Add a Description", class:"textfield" %>
+</div>
+<div class="">
+<%= f.text_field :location, placeholder:"Whered ya get this from?", class:"textfield" %>
+</div>
+<div class="">
+<%= f.text_field :culture, placeholder:"What kind of food is it?", class:"textfield" %>
+</div>
+<div class="">
+<%= f.text_field :type, placeholder:"Breakfast, Lunch or Dinner?", class:"textfield" %>
+</div>
+
+<%= f.submit %>
+
+<%end%>
+</div>

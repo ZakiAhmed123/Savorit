@@ -1,0 +1,23 @@
+<nav id="navsignup">
+  <%= link_to 'Sign Up', sign_up_path %>
+</nav>
+  <div class="signinpage">
+
+      <h1 id="join">Sign In</h1>
+      <%= form_tag  do %>
+        <div class="">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div class="">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+
+
+        <%= submit_tag "Sign In", class: "signuplink" %>
+
+
+      <% end %>
+
+  </div>

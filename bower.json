@@ -1,0 +1,23 @@
+{
+  "name": "savorit",
+  "authors": [
+    "“Zaki <“reach.zaki.ahmed@gmail.com”>"
+  ],
+  "description": "food app",
+  "main": "savorit",
+  "keywords": [
+    "food"
+  ],
+  "license": "MIT",
+  "homepage": "localhost:3000",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "cropit": "~0.5.1"
+  }
+}

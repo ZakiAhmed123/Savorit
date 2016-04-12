@@ -1,0 +1,9 @@
+<%= link_to "Sign Out", sign_out_path %>
+
+<%= image_tag attachment_url(@current_user, :photo, :fill, 70, 70, format: "jpg"), class:"pp" %>
+<%= @current_user.first_name %>
+<%= @current_user.last_name %>
+<%= @current_user.city %>
+
+
+<%= link_to "image upload", post_path(id: @current_user.id) %>

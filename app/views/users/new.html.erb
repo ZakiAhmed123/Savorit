@@ -1,0 +1,50 @@
+<nav id="navsignup">
+  <%= link_to 'Sign In', sign_in_path %>
+</nav>
+
+  <div class="signoutpage">
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, 'error') %> prevented your form from success.
+      <ul class="mdl-list">
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="errorsss"><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+      <h1 id="join">Sign Up</h1>
+      <%= form_for @user do |f| %>
+      <div class="">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder:"First Name", class:"textfield" %>
+      </div>
+      <div class="">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder:" Last Name", class:"textfield" %>
+      </div>
+      <div class="">
+        <%= f.label :user_name %>
+        <%= f.text_field :user_name,placeholder:"User Name", class:"textfield" %>
+      </div>
+      <div class="">
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder:"email", class:"textfield"%>
+      </div>
+       <div class="">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder:"Password", class:"textfield" %>
+        </div>
+        <div class="">
+          <%= f.label :city %>
+          <%= f.text_field :city, placeholder:"City", class:"textfield"%>
+        </div>
+
+        <div class="attachmentfield">
+          <%= f.label :photo %>
+          <%= f.attachment_field :photo, class:"attachment" %>
+        </div>
+
+        <div>
+        <%= f.submit "Sign Up", class: "signuplink" %>
+          <% end %>
+        </div>
+      </div>
