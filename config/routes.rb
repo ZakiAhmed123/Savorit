@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/users/:id/feed' => 'users#feed', as: :posts
   get '/users/:id/feed/upload' => 'users#new_post', as: :post
   post 'users/:id/feed' => 'users#create_post'
+  get '/users/explore/:id' => 'users#profile', as: :user
+  get '/users/explore' => 'users#explore', as: :explore
   # get 'users/feed'
   #
   # get 'users/profile'

@@ -1,7 +1,11 @@
-<nav id="nav">
-</p>
-<p id="login"><%= link_to sign_in_path, class:"login" do %><button id="signin"> Sign In</button> <% end %>
-<%= link_to sign_up_path, class:"login" do %><button id="signup"> Sign Up</button><% end %></p>
-</nav>
-<center><p id="welcome"> Savor It </p></center>
-</nav>
+<div class="nav">
+<p id="login"><%= link_to sign_in_path, class:"login" do %><button id="signin"> Sign In</button> <% end %></p>
+<p><%= link_to sign_up_path, class:"login" do %><button id="signup"> Sign Up</button><% end %></p>
+</div>
+<strong><p class="welcome"> Savor it </p></strong>
+<div class="photos">
+<center><%= image_tag 'burrito.jpg', class:"homephoto"%>
+<%= image_tag 'waffle.jpg', class:"homephoto" %>
+<%= image_tag 'burger.jpg', class:"burger" %>
+<%= image_tag 'ramen.jpg', class:"homephoto" %></center>
+</div>

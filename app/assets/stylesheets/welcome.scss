@@ -1,3 +1,101 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: LeagueScript;
+  src: url('LeagueScript.otf');
+}
+
+@font-face {
+  font-family: Quicksand;
+  src: url('Quicksand-Regular.otf');
+}
+
+
+.homephoto {
+  width:48.4%;
+  height:42%;
+  border:2px solid white;
+}
+.photos {
+  display:flex;
+  flex-wrap: wrap;
+  margin:10px 0 0 0;
+}
+
+.welcome {
+  font-family: LeagueScript;
+  font-size: 150px;
+  color:#2ECC71;
+  position:absolute;
+  bottom:165px;
+  right:220px;
+  border-bottom: 2px solid #2ECC71;
+  margin:0px;
+}
+
+.burger{
+width:48.4%;
+height:42%;
+border:2px solid white;
+}
+body {
+  margin:0px;
+}
+
+.nav {
+  display:flex;
+  margin:0px;
+}
+
+#login {
+  margin:0px;
+}
+
+.nav p {
+  margin:0px;
+
+}
+
+#signin {
+  border:2px solid #2ECC71;
+  width:125px;
+  height:40px;
+  color:#2ECC71;
+  background-color: white;
+  font-family:Quicksand;
+  border-radius: 3px;
+  margin:5px 3px 3px 3px;
+  font-size: 20px;
+  position:absolute;
+  top:470px;
+  right:500px;
+}
+
+#signin:hover {
+  background-color: #2ECC71;
+  color:white;
+}
+#signup {
+  border:2px solid #2ECC71;
+  width:125px;
+  height:40px;
+  color:#2ECC71;
+  font-family:Quicksand;
+  border-radius: 3px;
+  margin:5px 3px 3px 3px;
+  font-size: 20px;
+  position:absolute;
+  top:470px;
+  right:633px;
+  background-color: white;
+
+}
+
+#signup:hover {
+  background-color: #2ECC71;
+  color:white;
+}
+.phrase {
+  font-family: Quicksand;
+  font-size: 30px;
+  color:#2ECC71;
+  width:79%;
+}

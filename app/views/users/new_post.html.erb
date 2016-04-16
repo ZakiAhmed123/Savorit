@@ -1,43 +1,31 @@
+<nav id="navfeed">
+ <strong><%= link_to "Savor it", posts_path, class:"title"%></strong>
+<div class="icons"><%= link_to post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></div>
+<p class="explore"><i class="fa fa-compass fa-lg" aria-hidden="true"></i>
+<%= link_to "Sign Out", sign_out_path, class:"signout" %>
 
-<%= link_to "Home", posts_path %>
-<div class="image-editor">
-  <div id="title">Crop and Resize </div>
-  <input type="file" class="cropit-image-input">
-  <div id="imagePreview" class="cropit-preview" ></div>
-  <div class="image-size-label">
-    Resize image
+</p>
+
+</nav>
+<div id="image-cropper">
+​
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="cropit-preview"></div>
+      <input type="range" class="cropit-image-zoom-input" />
+    </div>
+    <div class="col-xs-3">
+      <input type="file" class="cropit-image-input" />
+
+      <button class="cropit-save">Save</button>
+    </div>
   </div>
-  <input type="range" class="cropit-image-zoom-input">
-  <button class="rotate-ccw">Rotate counterclockwise</button>
-  <button class="rotate-cw">Rotate clockwise</button>
-
-  <button class="export">Export</button>
+​
+​
 </div>
-
-<button class="Nashville">Nashville</button>
-<button class="1977"> 1977</button>
-<button class="Brannan">Brannan</button>
-<button class="Gotham">Gotham</button>
-<button class="Hefe">Hefe</button>
-<button class="Inkwell">Inkwell</button>
-<button class="LordKelvin">Lord Kelvin</button>
-<button class="xpro2">X PRO II</button>
-<div class="form">
-<%= form_for @post do |f| %>
-<div class="">
-<%= f.text_field :text, placeholder:"Add a Description", class:"textfield" %>
-</div>
-<div class="">
-<%= f.text_field :location, placeholder:"Whered ya get this from?", class:"textfield" %>
-</div>
-<div class="">
-<%= f.text_field :culture, placeholder:"What kind of food is it?", class:"textfield" %>
-</div>
-<div class="">
-<%= f.text_field :type, placeholder:"Breakfast, Lunch or Dinner?", class:"textfield" %>
-</div>
-
+​  <%= form_for @post do |f| %>
+  <%= f.text_area :text, as: :text, class:"newpost", placeholder:"describe it"%>
+  <%= f.text_field :culture, class:"newpost", placeholder:"What Kind of Food is it?"%>
+  <%= f.text_field :location, class:"newpost", placeholder:"whered ya get this?Restaurant or Home"%>
 <%= f.submit %>
-
-<%end%>
-</div>
+<%end %>

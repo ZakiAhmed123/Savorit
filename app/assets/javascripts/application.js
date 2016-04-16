@@ -16,3 +16,4 @@
 //= require bower_components/cropit/dist/jquery.cropit.js
 //= require jquery.filterme.js
 //= require users.js
+//= require welcome.js
