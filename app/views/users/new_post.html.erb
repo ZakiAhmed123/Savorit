@@ -1,31 +1,52 @@
 <nav id="navfeed">
- <strong><%= link_to "Savor it", posts_path, class:"title"%></strong>
-<div class="icons"><%= link_to post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></div>
-<p class="explore"><i class="fa fa-compass fa-lg" aria-hidden="true"></i>
-<%= link_to "Sign Out", sign_out_path, class:"signout" %>
 
-</p>
+  <strong><%= link_to "Savor it", posts_path, class:"title"%>
+  </strong>
 
+  <div class="icon_container">
+    <p class="explore">
+      <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
+    </p>
+    <div class="icons"><%= link_to post_path(id: @current_user.id) do %>
+      <i class="fa fa-camera-retro fa-2x"></i><%end%>
+    </div>
+    <p class="signout"><%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
+    </p>
+  </div>
+
+  <div class="catchphrase">
+    Feed the Craving
+  </div>
 </nav>
 <div id="image-cropper">
-​
-  <div class="row">
-    <div class="col-xs-9">
-      <div class="cropit-preview"></div>
-      <input type="range" class="cropit-image-zoom-input" />
+  ​
+  <div class="image-editor">
+    <input type="file" class="cropit-image-input">
+    <div class="cropit-preview"></div>
+    <div class="image-size-label">
+      Resize image
     </div>
-    <div class="col-xs-3">
-      <input type="file" class="cropit-image-input" />
-
-      <button class="cropit-save">Save</button>
-    </div>
-  </div>
-​
-​
+    <input type="range" class="cropit-image-zoom-input">
+    <button class="rotate-ccw">
+      <i class="fa fa-undo" aria-hidden="true"></i>
+    </button>
+    <button class="rotate-cw">
+      <i class="fa fa-repeat" aria-hidden="true"></i>
+    </button>
+    <form action="#" method="post" name="form_name" id="form_id" class="form_class">
+      <button class="Nashville">Nashville</button>
+      <button class="1977">
+        1977</button>
+      <button class="Brannan">Brannan</button>
+      <button class="Gotham">Gotham</button>
+      <button class="Hefe">Hefe</button>
+      <button class="Inkwell">Inkwell</button>
+      <button class="LordKelvin">Lord Kelvin</button>
+      <button class="xpro2">X PRO II</button <label>Description :</label>
+    <input type="text" name="description" id="description" placeholder="Description"/>
+    <input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
+    <input type="text" name="culture" id="culture" placeholder="What type of Cultual Food is it?"/>
+    <button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
+  </form>
 </div>
-​  <%= form_for @post do |f| %>
-  <%= f.text_area :text, as: :text, class:"newpost", placeholder:"describe it"%>
-  <%= f.text_field :culture, class:"newpost", placeholder:"What Kind of Food is it?"%>
-  <%= f.text_field :location, class:"newpost", placeholder:"whered ya get this?Restaurant or Home"%>
-<%= f.submit %>
-<%end %>

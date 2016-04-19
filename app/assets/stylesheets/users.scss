@@ -6,121 +6,113 @@
   font-family: Quicksand;
   src: url('Quicksand-Regular.otf');
 }
-.profilephoto {
-  border-radius: 50px;
-  border:2px solid #2ECC71;
+html {
+  height: 100%;
 }
-
+body {
+  height: 100%;
+}
 #navfeed {
-  display:flex;
-  background-color:#F1C40F;
-  color:white;
+  display: flex;
+  background-color: #F1C40F;
+  color: white;
   font-size: 40px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+// NAVIGATION BAR
 nav p {
+  margin: 0;
+}
+.icon_container {
   margin:0px;
+  display:flex;
 }
 
+.catchphrase {
+  font-family: Quicksand;
+  font-size: 35px;
+  color:#C0392B;
+  text-decoration: none;
+  line-height: 75px;
+}
+.catchphrase:hover{
+color:white;
+}
 .title {
-  font-family:LeagueScript;
+  font-family: LeagueScript;
   line-height: 83px;
   margin-left: 8px;
   text-decoration: none;
-  color:#C0392B;
+  color: #C0392B;
   font-size: 50px;
 }
 .title:hover {
-  color:white;
+  color: white;
 }
 .signout:hover {
-  color:#551A8B;
+  color: #551A8B;
 }
-.signout {
-  align-self: flex-end;
-}
-
-.pp {
-  border-radius: 50px;
-  border:4px solid white;
-  margin:8px;
-}
-
-.signout i{
-  color:#C0392B;
+.signout i {
+  color: #C0392B;
   line-height: 83px;
 }
 .signout i:hover {
-color:white;
+  color: white;
 }
 .explore {
   font-family: Quicksand;
 }
-
-.profile {
-  width:20%;
-  height:40%;
-  background-color: #ECF0F1;
-  border-radius: 20px;
-  margin-top:10px;
-  margin-left:10px;
-  border:2px solid black;
+.icons {
+  margin: 0;
+  margin:0 15px 0 15px;
+}
+.icons i {
+  color: #C0392B;
+}
+.icons i:hover {
+  color: white;
+}
+.explore {
+  line-height: 75px;
+}
+.explore i {
+  color: #C0392B;
+}
+.explore i:hover {
+  color: white;
+}
+// PHOTO FEED
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
-html {
-height:100%;
-}
-body {
-  height:100%;
+.pp {
+  border-radius: 50px;
+  border: 4px solid white;
+  margin: 0px
 }
 
 .name {
-  color:black;
-  font-family:Arial;
-  margin-left:5px;
-  margin-bottom:2px;
-
-}
-
-.city {
-  color:black;
+  color: black;
   font-family: Arial;
-  margin-left:5px;
-  margin-bottom:2px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+.city {
+  color: black;
+  font-family: Arial;
+  margin-left: 5px;
+  margin-bottom: 2px;
 }
 
-.icons {
-  margin:0px;
+.feedpic {
+  width:100%; max-width: 350px;
+  height:100%;
+  max-height: 450px;
   align-self: center;
 }
-.icons i {
-  color:#C0392B;
-}
-
-.icons i:hover {
-  color:white;
-}
-
-.explore {
-  line-height: 75px;
-  align-self: flex-end;
-}
-.explore i {
-  color:#C0392B;
-}
-.explore i:hover {
-  color:white;
-}
-
-.feedcontainer {
-  margin:0px;
+.photoheader {
   display:flex;
-  flex-direction: column;
-}
-.container {
-  display:flex;
-  justify-content: space-around;
-
 }

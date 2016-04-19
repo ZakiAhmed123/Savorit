@@ -1,30 +1,40 @@
 <nav id="navfeed">
- <strong><%= link_to "Savor it", posts_path, class:"title"%></strong>
-<div class="icons"><%= link_to post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></div>
-<p><p class="explore"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></p>
-<p class="signout"><%= link_to sign_out_path do %><i class="fa fa-sign-out" aria-hidden="true"></i><%end%></p>
 
-</p>
+  <strong><%= link_to "Savor it", posts_path, class:"title"%>
+  </strong>
 
+  <div class="icon_container">
+  <p class="explore">
+    <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
+  </p>
+  <div class="icons"><%= link_to post_path(id: @current_user.id) do %>
+    <i class="fa fa-camera-retro fa-2x"></i><%end%>
+  </div>
+    <p class="signout"><%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
+    </p>
+  </div>
+
+  <div class="catchphrase"> Feed the Craving </div>
 </nav>
+
 <div class="container">
-<div class="profile">
-<center><%= image_tag attachment_url(@current_user, :photo, :fill, 100, 100, format: "jpg"), class:"pp" %>
-<p class="name"><%= @current_user.first_name %>
-<%= @current_user.last_name %> @<%= @current_user.user_name %></p>
-<p class="city"><%= @current_user.city %></p>
-<p style="font-family:Arial">Following <%= @current_user.follow_count %> Followers <%= @current_user.followers_count %> </p>
-</center>
-</div>
-<div class="feedcontainer">
-<% @posts.each do |f|%>
-<div class="feedpic">
-  <%= link_to user_path(id: f.user), class:"profilelink" do %><p><%= f.user.first_name %>
-  <%= f.user.last_name %>
-  <%= f.user.user_name %>
-<%= f.user.city %></p><%end%>
-<%= image_tag attachment_url f, :photo, :fill, 320, 400, format: "jpg" %>
-</div>
-<%end %>
-</div>
+    <% @posts.each do |f|%>
+    <div class="feedpic">
+      <%= link_to user_path(id: f.user) do%>
+      <div class="photoheader">
+      <p style="margin-bottom:0px; height:65px;"><%= image_tag attachment_url(f.user, :photo, :fill, 50, 50, format: "jpg"), class:"pp" %>
+      </p>
+        <p style="line-height:80px;margin-bottom:0px;height:65px; font-family:Quicksand;color:#E74C3C;line-height:65px;">
+          <%= f.user.first_name %>
+          <%= f.user.last_name %>
+        </p>
+      </div>
+      <%end%>
+      <%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %>
+      <%= f.description%>
+      <%= f.location %>
+      <%= f.culture %>
+    </div>
+    <%end %>
 </div>

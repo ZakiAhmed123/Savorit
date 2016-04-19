@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @post=Post.new
 @user= User.find_by id: params[:id]
 @current_user = User.find_by id: session[:user_id]
+@users=User.all
+post=Post.find_by id: params[:user_id]
 if @current_user && @current_user.following_users.present?
     follower_ids = @current_user.following_users.pluck(:id)
     all_ids = follower_ids << @current_user.id
@@ -17,7 +19,7 @@ if @current_user && @current_user.following_users.present?
 end
 
 def create_post
-  @post = Post.new params.require(:post).permit(:text,:user_id, :view_count, :culture, :type, :location, :photo)
+  @post = Post.new params.require(:post).permit(:description,:user_id, :view_count, :culture, :type, :location, :photo)
   @post.user=@current_user
   if @post.save
     redirect_to posts_path(id: @current_user.id)

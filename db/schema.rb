@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415183140) do
+ActiveRecord::Schema.define(version: 20160418193307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 20160415183140) do
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "view_count"
-    t.text     "text"
     t.string   "culture"
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "location"
     t.string   "photo_id"
+    t.text     "description"
   end
 
   create_table "refile_attachments", force: :cascade do |t|
