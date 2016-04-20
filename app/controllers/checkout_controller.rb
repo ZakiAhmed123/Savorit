@@ -20,7 +20,7 @@ class CheckoutController < ApplicationController
       Stripe.api_key = "sk_test_xIGhTi9JGwC0H65Tq1KdFEJE"
 
       Stripe::Charge.create(
-        :amount => @order.total_price,
+        :amount => @order.total_price_in_cents,
         :currency => "usd",
         :source => card_token,
         :description => @order.description
