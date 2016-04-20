@@ -7,7 +7,7 @@
   <p class="explore">
     <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
   </p>
-  <div class="icons"><%= link_to post_path(id: @current_user.id) do %>
+  <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
     <i class="fa fa-camera-retro fa-2x"></i><%end%>
   </div>
     <p class="signout"><%= link_to sign_out_path do %>
@@ -15,7 +15,7 @@
     </p>
   </div>
 
-  <div class="catchphrase"> Feed the Craving </div>
+  <div class="catchphrase"> <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart" aria-hidden="true"></i><%end %></div>
 </nav>
 
 <div class="container">
@@ -28,13 +28,14 @@
         <p style="line-height:80px;margin-bottom:0px;height:65px; font-family:Quicksand;color:#E74C3C;line-height:65px;">
           <%= f.user.first_name %>
           <%= f.user.last_name %>
+          <%=link_to 'Eat Me', add_to_cart_path(post_id: f.id), class:"buy", method: :post %>
         </p>
       </div>
       <%end%>
-      <%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %>
-      <%= f.description%>
-      <%= f.location %>
-      <%= f.culture %>
+  <%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %>
+      <p><%= f.description%></p>
+      <p>This is the <%= f.name %> at <%= f.location %></p>
+      <p><%= f.culture %></p>
     </div>
     <%end %>
 </div>

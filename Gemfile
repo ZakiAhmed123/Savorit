@@ -55,3 +55,6 @@ gem "refile-mini_magick"
 gem 'refile-postgres'
 gem 'rails_cropit'
 gem "acts_as_follower"
+gem 'rails-erd'
+gem 'stripe'
+gem 'payola-payments'

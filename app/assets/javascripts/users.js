@@ -52,6 +52,8 @@ $(window).ready(function() {
     var description = document.getElementById("description").value;
     var location = document.getElementById("location").value;
     var culture = document.getElementById("culture").value;
+    var name = document.getElementById("name").value;
+    var price = document.getElementById("price").value;
     // Create new form data
     var fd = new FormData();
     // Append our Canvas image file to the form data
@@ -59,9 +61,11 @@ $(window).ready(function() {
     fd.append("post[description]", description);
     fd.append("post[location]", location);
     fd.append("post[culture]", culture);
+    fd.append("post[name]", name);
+    fd.append("post[price]", price);
     // And send it
     $.ajax({
-      url: "/users/:id/feed",
+      url: "/users/2/feed",
       type: "POST",
       data: fd,
       processData: false,
@@ -71,7 +75,7 @@ $(window).ready(function() {
           alert("error");
         },
         200: function() {
-          window.location = "/users/:id/feed";
+          window.location = "/users/2/feed";
         }
       }
     });

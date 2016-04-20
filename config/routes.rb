@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  mount Payola::Engine => '/payola', as: :payola
+
   root 'welcome#welcome'
 
   get 'sign_in' => 'sessions#new', as: :sign_in
@@ -8,10 +11,22 @@ Rails.application.routes.draw do
   get "/users/new" => 'users#new', as: :sign_up
   post "/users/new" => 'users#create', as: :users
   get '/users/:id/feed' => 'users#feed', as: :posts
-  get '/users/:id/feed/upload' => 'users#new_post', as: :post
+  get '/users/:id/feed/upload' => 'users#new_post', as: :new_post
   post 'users/:id/feed' => 'users#create_post'
   get '/users/explore/:id' => 'users#profile', as: :user
   get '/users/explore' => 'users#explore', as: :explore
+
+  get '/users/:id/orders/index' => 'orders#index', as: :orders
+  get '/users/:id/orders/:id' => 'orders#show', as: :order
+
+  get 'posts/:id' => 'posts#show', as: :post
+  post '/users/:id/cart' => 'carts#add_to_cart', as: :add_to_cart
+  get '/users/:id/cart' => 'carts#view', as: :cart
+  delete '/users/:id/cart' => 'carts#remove_from_cart', as: :remove_from_cart
+
+  get '/users/:id/checkout'=>'checkout#start', as: :checkout
+  post '/users/:id/checkout'=> 'checkout#process_payment', as: :process_payment
+  get '/users/:id/receipt/:id' => 'checkout#receipt', as: :receipt
   # get 'users/feed'
   #
   # get 'users/profile'

@@ -14,7 +14,7 @@ body {
 }
 #navfeed {
   display: flex;
-  background-color: #F1C40F;
+  background-color: #1ABC9C;
   color: white;
   font-size: 40px;
   justify-content: space-between;
@@ -86,6 +86,7 @@ color:white;
 .container {
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .pp {
@@ -112,7 +113,10 @@ color:white;
   height:100%;
   max-height: 450px;
   align-self: center;
+  margin-bottom:50px;
+  margin-top: 70px;
 }
+
 .photoheader {
   display:flex;
 }

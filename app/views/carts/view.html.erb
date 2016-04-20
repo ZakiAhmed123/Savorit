@@ -1,0 +1,21 @@
+<h1> Shopping Cart </h1>
+<ul>
+
+  <li>
+    <strong>Total Price: </strong>
+
+    <%= @order.total_price %>
+
+  </li>
+</ul>
+Items
+<% @order.order_items.each do |f| %>
+<%= f.post.name %>
+<%= f.quantity %> at <%= f.price %>
+ <%= link_to 'Remove Item', remove_from_cart_path(post_id: f.post_id), method: :delete %><p>
+Total Price:  <%= number_to_currency f.total_price %>
+</p>
+
+<%= link_to 'checkout', checkout_path %>
+<strong><%= link_to "Home", posts_path%>
+<%end %>

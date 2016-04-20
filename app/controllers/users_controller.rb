@@ -19,7 +19,7 @@ if @current_user && @current_user.following_users.present?
 end
 
 def create_post
-  @post = Post.new params.require(:post).permit(:description,:user_id, :view_count, :culture, :type, :location, :photo)
+  @post = Post.new params.require(:post).permit(:description,:user_id, :view_count, :culture, :type, :location, :photo, :name, :price,:delivery_cost, :inventory)
   @post.user=@current_user
   if @post.save
     redirect_to posts_path(id: @current_user.id)

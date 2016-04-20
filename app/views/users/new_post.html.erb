@@ -7,7 +7,7 @@
     <p class="explore">
       <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
     </p>
-    <div class="icons"><%= link_to post_path(id: @current_user.id) do %>
+    <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
       <i class="fa fa-camera-retro fa-2x"></i><%end%>
     </div>
     <p class="signout"><%= link_to sign_out_path do %>
@@ -44,9 +44,11 @@
       <button class="Inkwell">Inkwell</button>
       <button class="LordKelvin">Lord Kelvin</button>
       <button class="xpro2">X PRO II</button <label>Description :</label>
-    <input type="text" name="description" id="description" placeholder="Description"/>
+    <input type="text" name="description" id="description" placeholder="Thoughts?"/>
     <input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
-    <input type="text" name="culture" id="culture" placeholder="What type of Cultual Food is it?"/>
+    <input type="text" name="name" id="name" placeholder="What did you order?"/>
+    <input type="text" name="culture" id="culture" placeholder="What culture does the food associate with?"/>
+    <input type="text" name="price" id="price" placeholder="How much did this cost?"/>
     <button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
   </form>
 </div>

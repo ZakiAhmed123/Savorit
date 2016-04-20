@@ -1,0 +1,27 @@
+<h1> RECEIPT </h1>
+<%= order.id %>
+<ul>
+  <li>
+    Purchase Date : <%= @order.purchased_at %>
+  </li>
+  <li>
+    Order ID: <%= @order.id %>
+  </li>
+  <li>
+    Purchaser: <%= @order.user.first_name %> <%= @order.user.last_name %> | <%= @order.user.email %>
+  </li>
+  <li>
+    Total Price:
+
+    <%= @order.total_price %>
+  </li>
+</ul>
+
+Items
+<% @order.order_items.each do |f| %>
+<%= f.post.name %>
+<%= f.quantity %> at <%= f.price %>
+<p>
+Total Price:  <%= number_to_currency f.total_price %>
+</p>
+<%end %>
