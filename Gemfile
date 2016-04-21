@@ -51,9 +51,9 @@ end
 ruby '2.3.0'
 
 gem 'bcrypt'
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
-gem 'refile-postgres'
+gem 'refile', '0.6.2', require: 'refile/rails'
+gem 'refile-mini_magick'
+gem 'refile-postgres', '1.2'
 gem 'rails_cropit'
 gem "acts_as_follower"
 gem 'rails-erd'
