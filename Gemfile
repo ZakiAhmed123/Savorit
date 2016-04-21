@@ -49,6 +49,9 @@ group :production do
   gem 'rails_12factor'
 end
 ruby '2.3.0'
+group :production do
+  gem 'rails_12factor'
+end
 gem 'bcrypt'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
@@ -58,3 +61,4 @@ gem "acts_as_follower"
 gem 'rails-erd'
 gem 'stripe'
 gem 'payola-payments'
+gem 'sms-easy'
