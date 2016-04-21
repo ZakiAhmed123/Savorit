@@ -2,14 +2,16 @@
 @import "users.scss";
 @import 'welcome.scss';
 @import 'sessions.scss';
+@import 'cart.scss';
+@import 'checkout.scss';
 .cropit-preview {
   background-color: #f8f8f8;
   background-size: cover;
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-top: 7px;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 330px;
 }
 
 .cropit-preview-image-container {
