@@ -12,7 +12,7 @@ class CheckoutController < ApplicationController
     def process_payment
       @order = Order.find_by status: 'cart', user_id: @current_user.id
 
-      card_token = params[:stripeToken] 
+      card_token = params[:stripeToken]
 
       Stripe.api_key = "sk_test_xIGhTi9JGwC0H65Tq1KdFEJE"
 
@@ -23,13 +23,8 @@ class CheckoutController < ApplicationController
         :description => @order.description
       )
 
-      respond_to do |f|
-      if @order.update status: 'pending'
-        InstructionsMailer.instructions_email.deliver
+      @order.update status: 'pending'
       redirect_to receipt_path(id: @order.id)
-    else
-      render :new
-    end
     end
 
     def receipt
