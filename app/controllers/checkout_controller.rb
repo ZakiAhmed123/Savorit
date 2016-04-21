@@ -18,7 +18,7 @@ class CheckoutController < ApplicationController
 
       Stripe::Charge.create(
         :amount => @order.total_price_in_cents,
-        # :currency => "usd",
+        :currency => "usd",
         :source => card_token,
         :description => @order.description
       )
