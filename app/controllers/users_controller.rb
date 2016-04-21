@@ -14,6 +14,18 @@ if @current_user && @current_user.following_users.present?
   end
   end
 
+  def upvotes
+    @post = Post.find params[:user_id]
+      @post.update view_count: (@post.view_count + 1)
+      redirect_to posts_path(id: @current_user.id)
+  end
+
+  def downvotes
+    @post = Post.find params[:user_id]
+      @post.update view_count: (@post.view_count - 1)
+      redirect_to posts_path(id: @current_user.id)
+    end
+
   def new_post
 @post=Post.new
 end
@@ -30,12 +42,15 @@ def create_post
 end
 
   def profile
+    @user= User.find_by id: params[:id]
   end
 
   def new
   end
 
   def explore
+    @user= User.find_by id: params[:id]
+    @posts=Post.all
   end
 
   def new
@@ -43,7 +58,7 @@ end
   end
 
   def create
-  @user = User.new params.require(:user).permit(:email, :password, :first_name, :last_name, :user_name, :city)
+  @user = User.new params.require(:user).permit(:email, :password, :first_name, :last_name, :user_name, :city, :address, :photo)
   if @user.save
    session[:user_id] = @user.id
   redirect_to posts_path(id: @user.id)
@@ -52,5 +67,6 @@ end
   render:new
   end
   end
+  
 
   end

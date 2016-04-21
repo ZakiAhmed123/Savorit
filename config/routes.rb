@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   post 'users/:id/feed' => 'users#create_post'
   get '/users/explore/:id' => 'users#profile', as: :user
   get '/users/explore' => 'users#explore', as: :explore
+  post 'users/explore/:id/follow' => 'following#create', as: :follow
+  post 'users/explore/:id/unfollow' => 'following#delete', as: :unfollow
+
 
   get '/users/:id/orders/index' => 'orders#index', as: :orders
   get '/users/:id/orders/:id' => 'orders#show', as: :order
+
 
   get 'posts/:id' => 'posts#show', as: :post
   post '/users/:id/cart' => 'carts#add_to_cart', as: :add_to_cart
@@ -27,6 +31,9 @@ Rails.application.routes.draw do
   get '/users/:id/checkout'=>'checkout#start', as: :checkout
   post '/users/:id/checkout'=> 'checkout#process_payment', as: :process_payment
   get '/users/:id/receipt/:id' => 'checkout#receipt', as: :receipt
+
+  post 'users/:id/feed' => 'users#upvotes', as: :upvote_post
+  post 'users/:id/feed' => 'users#downvotes', as: :downvote_post
   # get 'users/feed'
   #
   # get 'users/profile'

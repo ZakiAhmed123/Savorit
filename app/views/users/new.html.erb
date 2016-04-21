@@ -1,6 +1,6 @@
 <nav id="navfeed">
 
-  <strong><%= link_to "Savor it", posts_path, class:"title"%>
+  <strong class="title">Savor It
   </strong>
 
   <div class="icon_container">
@@ -13,21 +13,7 @@
 
   <div class="catchphrase"> Feed the Craving </div>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="signoutpage">
+<div class="signoutpage">
     <% if @user.errors.any? %>
       <%= pluralize(@user.errors.count, 'error') %> prevented your form from success.
       <ul class="mdl-list">
@@ -36,15 +22,15 @@
         <% end %>
       </ul>
     <% end %>
-      <h1 id="join">Sign Up</h1>
+      <h1 id="join">Join Savor It Today.</h1>
       <%= form_for @user do |f| %>
       <div class="">
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, placeholder:"First Name", class:"textfield" %>
+        <%= f.text_field :first_name, placeholder:"Name", class:"textfield" %>
       </div>
       <div class="">
         <%= f.label :last_name %>
-        <%= f.text_field :last_name, placeholder:" Last Name", class:"textfield" %>
+        <%= f.text_field :last_name,placeholder:"User Name", class:"textfield" %>
       </div>
       <div class="">
         <%= f.label :user_name %>
@@ -58,14 +44,15 @@
           <%= f.label :password %>
           <%= f.password_field :password, placeholder:"Password", class:"textfield" %>
         </div>
-        <div class="">
-          <%= f.label :city %>
-          <%= f.text_field :city, placeholder:"City", class:"textfield"%>
-        </div>
 
         <div class="attachmentfield">
           <%= f.label :photo %>
           <%= f.attachment_field :photo, class:"attachment" %>
+        </div>
+
+        <div class="attachmentfield">
+          <%= f.label :address %>
+          <%= f.text_field :address, class:"attachment" %>
         </div>
 
         <div>

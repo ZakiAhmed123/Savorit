@@ -1,2 +1,25 @@
-<h1>Users#explore</h1>
-<p>Find me in app/views/users/explore.html.erb</p>
+<nav id="navfeed">
+
+  <strong><%= link_to "Savor it", posts_path(id: @current_user.id), class:"title"%>
+  </strong>
+
+  <div class="icon_container">
+  <p class="explore">
+    <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
+  </p>
+  <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
+    <i class="fa fa-camera-retro fa-2x"></i><%end%>
+  </div>
+    <p class="signout"><%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
+    </p>
+  </div>
+
+  <div class="catchphrase"> <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart" aria-hidden="true"></i><%end %></div>
+</nav>
+
+<% @posts.each do |f|%>
+<%= f.user.first_name %>
+<%= f.user.last_name %>
+<%= image_tag attachment_url(f, :photo, :fill, 50, 50, format: "jpg") %>
+<%end %>

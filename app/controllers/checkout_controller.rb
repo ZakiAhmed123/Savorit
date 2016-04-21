@@ -11,11 +11,8 @@ class CheckoutController < ApplicationController
 
     def process_payment
       @order = Order.find_by status: 'cart', user_id: @current_user.id
-      # process the payment
 
-      # Actually process payment
-      # card_token = params[:token]
-      card_token = params[:stripeToken] # how stripe checkout tells me
+      card_token = params[:stripeToken] 
 
       Stripe.api_key = "sk_test_xIGhTi9JGwC0H65Tq1KdFEJE"
 
@@ -26,17 +23,17 @@ class CheckoutController < ApplicationController
         :description => @order.description
       )
 
-      # if successful, redirect
-      # else show start
-
-      @order.update status: 'pending'
-
+      respond_to do |f|
+      if @order.update status: 'pending'
+        InstructionsMailer.instructions_email.deliver
       redirect_to receipt_path(id: @order.id)
+    else
+      render :new
+    end
     end
 
     def receipt
-      # I want a 404 if we can't find_by
       @order = Order.find_by! id: params[:id], user_id: @current_user.id
     end
-
+end
 end

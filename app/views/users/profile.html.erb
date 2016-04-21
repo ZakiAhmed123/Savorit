@@ -1,2 +1,26 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<nav id="navfeed">
+
+  <strong><%= link_to "Savor it", posts_path, class:"title"%>
+  </strong>
+
+  <div class="icon_container">
+  <p class="explore">
+    <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
+  </p>
+  <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
+    <i class="fa fa-camera-retro fa-2x"></i><%end%>
+  </div>
+    <p class="signout"><%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
+    </p>
+  </div>
+
+  <div class="catchphrase"> <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart" aria-hidden="true"></i><%end %></div>
+</nav>
+
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.user_name %>
+<%= image_tag attachment_url(@user, :photo, :fill, 50, 50, format: "jpg"), class:"pp" %>
+<%= link_to "Follow", unfollow_path(id: @user.id), class: "btn btn-default", method: :post%>
+<%= link_to "Unfollow", follow_path(id: @user.id), class: "btn btn-default", method: :post%>
