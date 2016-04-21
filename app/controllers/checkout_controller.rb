@@ -26,9 +26,9 @@ class CheckoutController < ApplicationController
       if @order.update status: 'pending'
         InstructionsMailer.instructions_email(@user).deliver
       redirect_to receipt_path(id: @order.id)
-    else
-      render :new
-    end
+      else
+        render :new
+      end
     end
 
     def receipt
