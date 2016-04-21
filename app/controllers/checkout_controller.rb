@@ -34,5 +34,4 @@ class CheckoutController < ApplicationController
     def receipt
       @order = Order.find_by! id: params[:id], user_id: @current_user.id
     end
-
 end
