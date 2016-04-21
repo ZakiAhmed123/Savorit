@@ -33,13 +33,6 @@
       </div>
       <%end%>
   <%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %>
-  <div class="voting">
-  <%= link_to upvote_post_path(id: f.user), method: :post, class: 'upvote' do %>
-  <i class="fa fa-heart-o"></i>
-  </i><%end %>
-  <%=f.view_count%>
-  <%= link_to downvote_post_path(id: f.user), method: :post, class: 'upvote' do %>
-  <i class="fa fa-frown-o"></i><%end%>
       <p><%= f.description%></p>
       <p>This is the <%= f.name %> at <%= f.location %></p>
       <p><%= f.culture %></p>

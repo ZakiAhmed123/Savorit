@@ -14,18 +14,6 @@ if @current_user && @current_user.following_users.present?
   end
   end
 
-  def upvotes
-    @post = Post.find params[:user_id]
-      @post.update view_count: (@post.view_count + 1)
-      redirect_to posts_path(id: @current_user.id)
-  end
-
-  def downvotes
-    @post = Post.find params[:user_id]
-      @post.update view_count: (@post.view_count - 1)
-      redirect_to posts_path(id: @current_user.id)
-    end
-
   def new_post
 @post=Post.new
 end

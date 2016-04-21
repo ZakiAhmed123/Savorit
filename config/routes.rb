@@ -32,8 +32,6 @@ Rails.application.routes.draw do
   post '/users/:id/checkout'=> 'checkout#process_payment', as: :process_payment
   get '/users/:id/receipt/:id' => 'checkout#receipt', as: :receipt
 
-  post 'users/:id/feed' => 'users#upvotes', as: :upvote_post
-  post 'users/:id/feed' => 'users#downvotes', as: :downvote_post
   # get 'users/feed'
   #
   # get 'users/profile'
