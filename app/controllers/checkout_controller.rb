@@ -26,8 +26,9 @@ class CheckoutController < ApplicationController
       @order.update status: 'pending'
       redirect_to receipt_path(id: @order.id)
     end
-
+    
     def receipt
       @order = Order.find_by! id: params[:id], user_id: @current_user.id
     end
+
 end
