@@ -1,41 +1,54 @@
 <nav id="navfeed">
 
-  <strong><%= link_to "Savor it", posts_path, class:"title"%>
-  </strong>
-
-  <div class="icon_container">
-  <p class="explore">
-  <%= link_to explore_path do%><i class="fa fa-compass fa-lg" aria-hidden="true"></i><%end%>
-  </p>
-  <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
-    <i class="fa fa-camera-retro fa-2x"></i><%end%>
+  <div class="title"><strong>Savorit</strong>
   </div>
-    <p class="signout"><%= link_to sign_out_path do %>
-      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
-    </p>
+  <div class="subtitle">
+    Feed The Craving
   </div>
-
-  <div class="catchphrase"> <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart" aria-hidden="true"></i><%end %></div>
 </nav>
+
+<div id="footer">
+
+  <div class="icons">
+  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+  </div>
+
+    <div class="icons">
+      <center> <%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
+    </div>
+</div>
 
 <div class="container">
     <% @posts.each do |f|%>
-    <div class="feedpic">
-      <%= link_to user_path(id: f.user) do%>
-      <div class="photoheader">
-      <p style="margin-bottom:0px; height:65px;"><%= image_tag attachment_url(f.user, :photo, :fill, 50, 50, format: "jpg"), class:"pp" %>
-      </p>
-        <p style="line-height:80px;margin-bottom:0px;height:65px; font-family:Quicksand;color:#E74C3C;line-height:65px;">
+    <div class="feedpiccontainer">
+      <div class="feedpicheader">
+        <p><%= link_to user_path(id: f.user) do%><%= image_tag attachment_url(f.user, :photo, :fill, 50, 50, format: "jpg"), class:"pp" %><%end%>
           <%= f.user.first_name %>
           <%= f.user.last_name %>
           <%=link_to 'Eat Me', add_to_cart_path(post_id: f.id), class:"buy", method: :post %>
         </p>
-      </div>
-      <%end%>
-  <%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %>
+    </div>
+    <div class="picdiv">
+  <center><%= image_tag attachment_url(f, :photo, :fill, 320, 400, format: "jpg"), class:"feedpic" %></center>
+  </div>
+  <div class="feedpicfooter">
       <p><%= f.description%></p>
       <p>This is the <%= f.name %> at <%= f.location %></p>
-      <p><%= f.culture %></p>
+      <p>culture:<%= f.culture %></p>
     </div>
+  </div>
     <%end %>
 </div>

@@ -14,11 +14,18 @@ body {
 }
 #navfeed {
   display: flex;
-  background-color: #1ABC9C;
+  background-color: #2ECC71;
   color: white;
   font-size: 40px;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.subtitle {
+  font-family: Quicksand;
+  font-size: 35px;
+  color:#C0392B;
+  line-height: 75px;
 }
 // NAVIGATION BAR
 nav p {
@@ -29,14 +36,7 @@ nav p {
   display:flex;
 }
 
-.catchphrase {
-  font-family: Quicksand;
-  font-size: 35px;
-  color:#C0392B;
-  text-decoration: none;
-  line-height: 75px;
-}
-.catchphrase:hover{
+.catchphrase i:hover{
 color:white;
 }
 .title {
@@ -46,6 +46,7 @@ color:white;
   text-decoration: none;
   color: #C0392B;
   font-size: 50px;
+  width:50%;
 }
 .title:hover {
   color: white;
@@ -65,10 +66,12 @@ color:white;
 }
 .icons {
   margin: 0;
-  margin:0 15px 0 15px;
+  margin:0px;
+  width:20%;
 }
 .icons i {
   color: #C0392B;
+  line-height: 60px;
 }
 .icons i:hover {
   color: white;
@@ -87,6 +90,7 @@ color:white;
   display: flex;
   flex-direction: column;
   background-color: white;
+  align-items: center;
 }
 
 .pp {
@@ -113,10 +117,179 @@ color:white;
   height:100%;
   max-height: 450px;
   align-self: center;
-  margin-bottom:50px;
-  margin-top: 70px;
+}
+.feedpiccontainer {
+  display:flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Quicksand;
+
 }
 
-.photoheader {
+.feedpicfooter {
   display:flex;
+  flex-direction: column;
+}
+.feedpicfooter p{
+  margin: 0 3px 5px 0;
+}
+.buy {
+  width:90px;
+  height:45px;
+  border-radius: 5px;
+  border:2px solid #2ECC71;
+  font-family: Quicksand;
+  color:#2ECC71;
+  text-decoration: none;
+}
+
+.feedpicheader {
+  margin:0px
+}
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
+   background-color:#2ECC71;
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.edit_container {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+#image-cropper {
+  width:100%;
+  max-width: 640px;
+  font-family: Quicksand;
+}
+.imageform {
+  width:100%;
+  max-width: 640px;
+}
+
+#description {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+}
+
+#location {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+}
+
+#name {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+}
+
+#culture {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+}
+
+#price {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+}
+
+#btn_class {
+  width:100%;
+  max-width: 300px;
+  border-radius: 5px;
+  color:#95A5A6;
+  font-family: Quicksand;
+  height:40px;
+  font-size: 20px;
+  margin:10px 0 10px 0;
+  background-color: white;
+}
+
+.cropit-image-input {
+  font-family: Quicksand;
+  width:200px;
+}
+
+.rotate-ccw{
+background-color: white;
+}
+
+.rotate-cw {
+  background-color: white;
+}
+
+.profilecontainer {
+  display:flex;
+  flex-direction: column;
+}
+
+.profileheader {
+  width:100%;
+  font-family: Quicksand;
+}
+
+.profilepiccontainer{
+display:flex;
+flex-wrap:wrap;
+}
+
+.profileimages {
+  border:2px solid white;
+}
+
+
+.explorepic {
+  display:flex;
+  font-family: Quicksand;
+  font-size: 30px;
+  width:100%;
+  max-width: 240px;
+  flex-direction: column;
+  border:2px solid white;
+}
+
+.explorepic {
+text-decoration: none;
+}
+
+.explorecontainer {
+  display:flex;
+  flex-wrap: wrap;
 }

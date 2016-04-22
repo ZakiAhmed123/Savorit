@@ -1,25 +1,41 @@
 <nav id="navfeed">
 
-  <strong><%= link_to "Savor it", posts_path(id: @current_user.id), class:"title"%>
-  </strong>
-
-  <div class="icon_container">
-  <p class="explore">
-    <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
-  </p>
-  <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
-    <i class="fa fa-camera-retro fa-2x"></i><%end%>
+  <div class="title"><strong>Savorit</strong>
   </div>
-    <p class="signout"><%= link_to sign_out_path do %>
-      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
-    </p>
+  <div class="subtitle">
+    Feed The Craving
   </div>
-
-  <div class="catchphrase"> <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart" aria-hidden="true"></i><%end %></div>
 </nav>
 
+<div id="footer">
+
+  <div class="icons">
+  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+  </div>
+
+    <div class="icons">
+      <center> <%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
+    </div>
+</div>
+<div class="explorecontainer">
 <% @posts.each do |f|%>
-<%= f.user.first_name %>
-<%= f.user.last_name %>
-<%= image_tag attachment_url(f, :photo, :fill, 50, 50, format: "jpg") %>
+<div class="explorepic">
+<%= link_to user_path(id: f.user) do %><p><%= f.user.first_name %>
+<%= f.user.last_name %></p><%end%>
+<%= image_tag attachment_url(f, :photo, :fill, 200, 200, format: "jpg") %>
+</div>
 <%end %>
+</div>

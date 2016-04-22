@@ -1,27 +1,41 @@
 <nav id="navfeed">
 
-  <strong><%= link_to "Savor it", posts_path, class:"title"%>
-  </strong>
-
-  <div class="icon_container">
-    <p class="explore">
-      <i class="fa fa-compass fa-lg" aria-hidden="true"></i>
-    </p>
-    <div class="icons"><%= link_to new_post_path(id: @current_user.id) do %>
-      <i class="fa fa-camera-retro fa-2x"></i><%end%>
-    </div>
-    <p class="signout"><%= link_to sign_out_path do %>
-      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
-    </p>
+  <div class="title"><strong>Savorit</strong>
   </div>
-
-  <div class="catchphrase">
-    Feed the Craving
+  <div class="subtitle">
+    Feed The Craving
   </div>
 </nav>
+
+<div id="footer">
+
+  <div class="icons">
+  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+  </div>
+
+    <div class="icons">
+      <center> <%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
+    </div>
+</div>
+
+<div class="edit_container">
 <div id="image-cropper">
   ​
   <div class="image-editor">
+    <center>
     <input type="file" class="cropit-image-input">
     <div class="cropit-preview"></div>
     <div class="image-size-label">
@@ -29,25 +43,24 @@
     </div>
     <input type="range" class="cropit-image-zoom-input">
     <button class="rotate-ccw">
-      <i class="fa fa-undo" aria-hidden="true"></i>
+      <i class="fa fa-undo fa-2x" aria-hidden="true"></i>
     </button>
     <button class="rotate-cw">
-      <i class="fa fa-repeat" aria-hidden="true"></i>
+      <i class="fa fa-repeat fa-2x" aria-hidden="true"></i>
     </button>
-    <button class="Nashville">Nashville</button>
-    <button class="1977">1977</button>
-    <button class="Brannan">Brannan</button>
-    <button class="Gotham">Gotham</button>
-    <button class="Hefe">Hefe</button>
-    <button class="Inkwell">Inkwell</button>
-    <button class="LordKelvin">Lord Kelvin</button>
-    <button class="xpro2">X PRO II</button>
-    <form action="#" method="post" name="form_name" id="form_id" class="form_class">
-    <input type="text" name="description" id="description" placeholder="Thoughts?"/>
-    <input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
-    <input type="text" name="name" id="name" placeholder="What did you order?"/>
-    <input type="text" name="culture" id="culture" placeholder="What culture does the food associate with?"/>
-    <input type="text" name="price" id="price" placeholder="How much did this cost?"/>
-    <button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
-  </form>
+    <center>
+</div>
+</div>
+
+<div class="imageform">
+<center><form action="#" method="post" name="form_name" id="form_id" class="form_class">
+<input type="text" name="description" id="description" placeholder="Thoughts?"/>
+<input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
+<input type="text" name="name" id="name" placeholder="What did you order?"/>
+<input type="text" name="culture" id="culture" placeholder="Culture?"/>
+<input type="text" name="price" id="price" placeholder="How much did this cost?"/>
+<button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
+</form></center>
+</div>
+
 </div>

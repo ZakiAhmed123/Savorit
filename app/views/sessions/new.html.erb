@@ -1,23 +1,17 @@
-<nav id="navsignup">
-  <%= link_to 'Sign Up', sign_up_path %>
-</nav>
-  <div class="signinpage">
-
-      <h1 id="join">Sign In</h1>
+<div class="signinpage">
+      <center><p id="join">Savor It</p></center>
+      <center><p id="welcomeback"> Welcome Back </p></center>
       <%= form_tag  do %>
-        <div class="">
-          <%= label_tag :email %>
-          <%= text_field_tag :email%>
-        </div>
-        <div class="">
-          <%= label_tag :password %>
-          <%= password_field_tag :password %>
-        </div>
-
-
-        <%= submit_tag "Sign In", class: "signuplink" %>
-
-
+        <center><div class="">
+          <%= label_tag :email, nil, class:"signinheader" %>
+          <%= text_field_tag(:email,nil, class:'signinform')%>
+        </div></center>
+        <center><div class="">
+          <%= label_tag :password, nil, class:"signinheader"%>
+          <%= password_field_tag :password,nil, class:'signinform'%>
+        </div></center>
+        <center><div>
+        <%= submit_tag "Sign In", class: "signinlink" %>
+      </div></center>
       <% end %>
-
   </div>
