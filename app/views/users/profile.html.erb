@@ -37,9 +37,9 @@
 
 <%= @user.first_name %>
 <%= @user.last_name %>
-<%= @user.user_name %>
-<%= link_to "Follow", unfollow_path(id: @user.id), class: "btn btn-default", method: :post%>
-<%= link_to "Unfollow", follow_path(id: @user.id), class: "btn btn-default", method: :post%></p>
+@<%= @user.user_name %>
+<%= link_to "Follow", unfollow_path(id: @user.id), class: "followbtn", method: :post%>
+<%= link_to "Unfollow", follow_path(id: @user.id), class: "followbtn", method: :post%></p>
 </center>
 </div>
 

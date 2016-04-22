@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def feed
     @post=Post.new
-@user= User.find_by id: params[:id]
-@current_user = User.find_by id: session[:user_id]
-@users=User.all
-post=Post.find_by id: params[:user_id]
-if @current_user && @current_user.following_users.present?
+    @user= User.find_by id: params[:id]
+    @current_user = User.find_by id: session[:user_id]
+    @users=User.all
+    post=Post.find_by id: params[:user_id]
+    if @current_user && @current_user.following_users.present?
     follower_ids = @current_user.following_users.pluck(:id)
     all_ids = follower_ids << @current_user.id
     @posts = Post.where(user_id: all_ids).order("created_at DESC")
@@ -56,6 +56,5 @@ end
   render:new
   end
   end
-
 
   end

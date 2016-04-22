@@ -118,6 +118,10 @@ color:white;
   max-height: 450px;
   align-self: center;
 }
+.feedpic:hover {
+  transform: scale(1.1, 1.1);
+  opacity: 1;
+}
 .feedpiccontainer {
   display:flex;
   flex-direction: column;
@@ -130,9 +134,12 @@ color:white;
 .feedpicfooter {
   display:flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .feedpicfooter p{
   margin: 0 3px 5px 0;
+  width:100%;
+  max-width: 340px;
 }
 .buy {
   width:90px;
@@ -285,11 +292,41 @@ flex-wrap:wrap;
   border:2px solid white;
 }
 
-.explorepic {
+.explorename{
 text-decoration: none;
+color:black;
 }
 
+.explorename:hover {
+  color:#E74C3C;
+}
 .explorecontainer {
   display:flex;
   flex-wrap: wrap;
+}
+
+.followbtn {
+  text-decoration: none;
+  width:120px;
+  height:30px;
+  background-color:#3498DB;
+color:white;
+font-size: 18px;
+border-radius: 8px;
+}
+
+.followbtn:hover {
+  color:#3498DB;
+  background-color: white;
+  border:2px solid #3498DB;
+}
+
+.buy:hover {
+  background-color:#2ECC71;
+  color:white;
+}
+
+.pp:hover {
+  transform: scale(1.1, 1.1);
+  opacity: 1;
 }
