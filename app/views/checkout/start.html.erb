@@ -1,6 +1,39 @@
-<h2>Buy!</h2>
+<nav id="navfeed">
 
-<%= form_tag process_payment_path, method: :post, id: "payment-form" do %>
+  <div class="title"><strong>Savorit</strong>
+  </div>
+  <div class="subtitle">
+    Feed The Craving
+  </div>
+</nav>
+
+<div id="footer">
+
+  <div class="icons">
+  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+  </div>
+
+    <div class="icons">
+      <center> <%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
+    </div>
+</div>
+
+<center><h2>One last step before FEASTING</h2></center>
+
+<center><%= form_tag process_payment_path, method: :post, id: "payment-form" do %>
 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -49,12 +82,12 @@
 <% end %>
 
 <% end %>
+</center>
+
+<center><h3>Your Items</h3></center>
 
 
-<h3>Your Items</h3>
-
-
-
+<center>
 <table>
   <thead>
     <tr>
@@ -73,7 +106,7 @@
     </tr>
   </thead>
 
-  <tbody>
+<tbody>
     <% @order.order_items.each do |order_item| %>
 
     <tr>
@@ -95,3 +128,4 @@
 
   </tbody>
 </table>
+</center>

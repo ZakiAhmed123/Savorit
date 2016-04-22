@@ -65,7 +65,7 @@ $(window).ready(function() {
     fd.append("post[price]", price);
     // And send it
     $.ajax({
-      url: "/users/2/feed",
+      url: "/users/5/feed",
       type: "POST",
       data: fd,
       processData: false,
@@ -75,7 +75,7 @@ $(window).ready(function() {
           alert("error");
         },
         200: function() {
-          window.location = "/users/2/feed";
+          window.location = "/users/5/feed";
         }
       }
     });

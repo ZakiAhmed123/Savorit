@@ -1,9 +1,38 @@
+<nav id="navfeed">
+
+  <div class="title"><strong>Savorit</strong>
+  </div>
+  <div class="subtitle">
+    Feed The Craving
+  </div>
+</nav>
+
+<div id="footer">
+
+  <div class="icons">
+  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+  </div>
+
+  <div class="icons">
+  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+  </div>
+
+    <div class="icons">
+      <center> <%= link_to sign_out_path do %>
+      <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
+    </div>
+</div>
+
 <h1> RECEIPT </h1>
-<%= @order.id %>
 <ul>
-  <li>
-    Purchase Date : <%= @order.purchased_at %>
-  </li>
   <li>
     Order ID: <%= @order.id %>
   </li>
@@ -17,7 +46,8 @@
   </li>
 </ul>
 
-Items
+<p id="receipthead"><strong>Items</strong></p>
+<div class="receiptitems">
 <% @order.order_items.each do |f| %>
 <%= f.post.name %>
 <%= f.quantity %> at <%= f.price %>
@@ -25,3 +55,4 @@ Items
 Total Price:  <%= number_to_currency f.total_price %>
 </p>
 <%end %>
+</div>
