@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: savorit_production
-  username: savorit
-  password: <%= ENV['SAVORIT_DATABASE_PASSWORD'] %>
+  database: savorit_development
