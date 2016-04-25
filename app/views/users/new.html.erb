@@ -1,19 +1,5 @@
-<nav id="navfeed">
 
-  <strong class="title">Savor It
-  </strong>
-
-  <div class="icon_container">
-  <p class="explore">
-  </p>
-    <p class="signout"><%= link_to sign_in_path do %>
-      <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i><%end%>
-    </p>
-  </div>
-
-  <div class="catchphrase"> Feed the Craving </div>
-</nav>
-<div class="signoutpage">
+<div class="signuppage">
     <% if @user.errors.any? %>
       <%= pluralize(@user.errors.count, 'error') %> prevented your form from success.
       <ul class="mdl-list">
@@ -22,41 +8,42 @@
         <% end %>
       </ul>
     <% end %>
-      <h1 id="join">Join Savor It Today.</h1>
+    <center><p id="join">Savor it</p></center>
+    <center><p id="welcomeback"> Join Today </p></center>
       <%= form_for @user do |f| %>
-      <div class="">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, placeholder:"Name", class:"textfield" %>
-      </div>
-      <div class="">
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name,placeholder:"User Name", class:"textfield" %>
-      </div>
-      <div class="">
-        <%= f.label :user_name %>
-        <%= f.text_field :user_name,placeholder:"User Name", class:"textfield" %>
-      </div>
-      <div class="">
-        <%= f.label :email %>
-        <%= f.text_field :email, placeholder:"email", class:"textfield"%>
-      </div>
-       <div class="">
-          <%= f.label :password %>
-          <%= f.password_field :password, placeholder:"Password", class:"textfield" %>
-        </div>
+      <center><div class="">
+        <%= f.label :first_name, class:"signinheader" %>
+        <%= f.text_field :first_name, placeholder:"Name", class:'signinform' %>
+      </div></center>
+      <center><div class="">
+        <%= f.label :last_name, class:"signinheader" %>
+        <%= f.text_field :last_name,placeholder:"User Name", class:'signinform' %>
+      </div></center>
+      <center><div class="">
+        <%= f.label :user_name, class:"signinheader" %>
+        <%= f.text_field :user_name,placeholder:"User Name", class:'signinform' %>
+      </div></center>
+      <center><div class="">
+        <%= f.label :email, class:"signinheader" %>
+        <%= f.text_field :email, placeholder:"Email", class:'signinform'%>
+      </div></center>
+       <center><div class="">
+          <%= f.label :password, class:"signinheader" %>
+          <%= f.password_field :password, placeholder:"Password", class:'signinform' %>
+        </div></center>
 
-        <div class="attachmentfield">
-          <%= f.label :photo %>
-          <%= f.attachment_field :photo, class:"attachment" %>
-        </div>
+        <center><div class="attachmentfield">
+          <%= f.label :photo, class:"signinheader" %>
+          <%= f.attachment_field :photo, class:'signinform' %>
+        </div></center>
 
-        <div class="attachmentfield">
-          <%= f.label :address %>
-          <%= f.text_field :address, class:"attachment" %>
-        </div>
+        <center><div class="attachmentfield">
+          <%= f.label :address, class:"signinheader" %>
+          <%= f.text_field :address, class:'signinform' %>
+        </div></center>
 
-        <div>
-        <%= f.submit "Sign Up", class: "signuplink" %>
+      <center>  <div>
+        <%= f.submit "Sign Up", class: "signinlink" %>
           <% end %>
-        </div>
+        </div></center>
       </div>

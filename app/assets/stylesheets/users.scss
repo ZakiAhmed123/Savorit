@@ -330,3 +330,10 @@ border-radius: 8px;
   transform: scale(1.1, 1.1);
   opacity: 1;
 }
+
+.signuppage {
+  display:flex;
+  background-color: #2ECC71;
+  flex-direction: column;
+  width:100%;
+}

@@ -1,11 +1,38 @@
-<div class="nav">
-<p id="login"><%= link_to sign_in_path, class:"login" do %><button id="signin"> Sign In</button> <% end %></p>
-<p><%= link_to sign_up_path, class:"login" do %><button id="signup"> Sign Up</button><% end %></p>
+<nav>
+  <p class="welcome"> Savor it </p>
+  <div class="login-container">
+  <p id="login"><%= link_to sign_in_path, class:"login" do %><button id="signin"> Sign In</button> <% end %></p>
+  <p><%= link_to sign_up_path, class:"login" do %><button id="signup"> Sign Up</button><% end %></p>
 </div>
-<strong><p class="welcome"> Savor it </p></strong>
-<div class="photos">
-<center><%= image_tag 'burrito.jpg', class:"homephoto"%>
-<%= image_tag 'waffle.jpg', class:"homephoto" %>
-<%= image_tag 'burger.jpg', class:"burger" %>
-<%= image_tag 'ramen.jpg', class:"homephoto" %></center>
+</nav>
+<div class="image-container">
+  <%= image_tag 'ramen.jpg', class:"image"%>
+  <%= image_tag 'burrito.jpg', class:"image"%>
+  <%= image_tag 'waffle.jpg', class:"image"%>
+  <%= image_tag 'burger.jpg', class:"image"%>
+</div>
+<div class="how-to">
+  <div class="heading">
+  <center><p class=heading-title>How to Savor It </p></center>
+<center><p class="subhead">Getting the food you didnt even know you wanted is easier than ever. </p></center>
+</div>
+<center><div class="directions-container">
+<div class="directions">
+  <center><i class="fa fa-search fa-3x" aria-hidden="true"></i>
+  <p class="subhead">The Search </p>
+  <p class="info">Connect with friends and look through what everyone is eating.</p></center>
+</div>
+<i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
+<div class="directions">
+  <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+  <p class="subhead">The Find </p>
+  <p class="info">Decide what you want to eat and checkout.</p>
+</div>
+<i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
+<div class="directions">
+<i class="fa fa-car fa-3x" aria-hidden="true"></i>
+<p class="subhead">The Delivery </p>
+<p class="info"> Get comfy because the food comes to you.</p>
+</div>
+</div></center>
 </div>

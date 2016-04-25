@@ -8,94 +8,106 @@
   src: url('Quicksand-Regular.otf');
 }
 
-
-.homephoto {
-  width:48.4%;
-  height:42%;
-  border:2px solid white;
-}
-.photos {
+// NAV STYLES
+nav {
   display:flex;
   flex-wrap: wrap;
-  margin:10px 0 0 0;
+  justify-content: space-between;
+  background-color: #2ECC71;
 }
-
 .welcome {
   font-family: LeagueScript;
-  font-size: 150px;
-  color:#2ECC71;
-  position:absolute;
-  bottom:165px;
-  right:220px;
-  border-bottom: 2px solid #2ECC71;
-  margin:0px;
+  font-size: 40px;
+  color:white;
+  margin:10px 0px 0px 15px;
 }
 
-.burger{
-width:48.4%;
-height:42%;
-border:2px solid white;
+.login-container {
+  display:flex;
+  margin:0px;
+  flex-wrap: wrap;
+  line-height: 60px;
+}
+#login {
+  margin:0px;
 }
 body {
   margin:0px;
 }
-
-.nav {
-  display:flex;
+.login-container p {
   margin:0px;
-}
-
-#login {
-  margin:0px;
-}
-
-.nav p {
-  margin:0px;
-
 }
 
 #signin {
-  border:2px solid #2ECC71;
+  border:2px solid white;
   width:125px;
   height:40px;
-  color:#2ECC71;
-  background-color: white;
+  color:white;
   font-family:Quicksand;
-  border-radius: 3px;
+  border-radius: 5px;
   margin:5px 3px 3px 3px;
   font-size: 20px;
-  position:absolute;
-  top:470px;
-  right:500px;
+  background-color: #2ECC71;
 }
 
 #signin:hover {
-  background-color: #2ECC71;
-  color:white;
+  background-color: #E74C3C;
+  border:2px solid #E74C3C;
 }
 #signup {
-  border:2px solid #2ECC71;
+  border:2px solid white;
   width:125px;
   height:40px;
-  color:#2ECC71;
+  color:white;
   font-family:Quicksand;
-  border-radius: 3px;
+  border-radius: 5px;
   margin:5px 3px 3px 3px;
   font-size: 20px;
-  position:absolute;
-  top:470px;
-  right:633px;
-  background-color: white;
+  background-color: #2ECC71;
 
 }
 
 #signup:hover {
-  background-color: #2ECC71;
-  color:white;
+  background-color: #E74C3C;
+  border:2px solid #E74C3C;
 }
-.phrase {
+
+// IMAGE STYLES
+
+.image-container {
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.image {
+  width:25%;
+  height:50%;
+}
+
+// How to section
+.how-to {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   font-family: Quicksand;
+}
+.directions-container {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.heading-title {
+  font-size: 70px;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+.subhead {
   font-size: 30px;
-  color:#2ECC71;
-  width:79%;
+}
+
+.directions {
+  width:28%;
 }
