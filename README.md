@@ -1,2 +1,2 @@
 # Savorit
-![alt text](images/SISC1.png "Home Page")
+![alt text](app/assets/images/SISC1.png "Home Page")
