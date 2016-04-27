@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421025834) do
+ActiveRecord::Schema.define(version: 20160426221903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "post_id"
+    t.integer  "comment_view_count"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "follows", force: :cascade do |t|
     t.integer  "followable_id",                   null: false
@@ -142,6 +150,7 @@ ActiveRecord::Schema.define(version: 20160421025834) do
     t.text     "customer_address"
     t.text     "business_address"
     t.integer  "setup_fee"
+    t.integer  "tax_percent"
   end
 
   add_index "payola_subscriptions", ["guid"], name: "index_payola_subscriptions_on_guid", using: :btree

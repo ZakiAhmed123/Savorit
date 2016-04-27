@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   post '/users/:id/checkout'=> 'checkout#process_payment', as: :process_payment
   get '/users/:id/receipt/:id' => 'checkout#receipt', as: :receipt
 
-  
+
 
   # get 'users/feed'
   #
