@@ -1,11 +1,4 @@
-@font-face {
-  font-family: LeagueScript;
-  src: url('LeagueScript.otf');
-}
-@font-face {
-  font-family: Quicksand;
-  src: url('Quicksand-Regular.otf');
-}
+
 html {
   height: 100%;
 }
@@ -22,7 +15,7 @@ body {
 }
 
 .subtitle {
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   font-size: 35px;
   color:#C0392B;
   line-height: 75px;
@@ -40,7 +33,7 @@ nav p {
 color:white;
 }
 .title {
-  font-family: LeagueScript;
+  font-family: 'League Script', cursive;
   line-height: 83px;
   margin-left: 8px;
   text-decoration: none;
@@ -62,7 +55,7 @@ color:white;
   color: white;
 }
 .explore {
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
 }
 .icons {
   margin: 0;
@@ -127,7 +120,7 @@ color:white;
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
 }
 
 .feedpicfooter {
@@ -145,7 +138,7 @@ color:white;
   height:45px;
   border-radius: 5px;
   border:2px solid #2ECC71;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   color:#2ECC71;
   text-decoration: none;
 }
@@ -174,7 +167,7 @@ color:white;
 #image-cropper {
   width:100%;
   max-width: 640px;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
 }
 .imageform {
   width:100%;
@@ -186,7 +179,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -197,7 +190,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -208,7 +201,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -219,7 +212,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -230,7 +223,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -241,7 +234,7 @@ color:white;
   max-width: 300px;
   border-radius: 5px;
   color:#95A5A6;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   height:40px;
   font-size: 20px;
   margin:10px 0 10px 0;
@@ -249,7 +242,7 @@ color:white;
 }
 
 .cropit-image-input {
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   width:200px;
 }
 
@@ -268,7 +261,7 @@ background-color: white;
 
 .profileheader {
   width:100%;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
 }
 
 .profilepiccontainer{
@@ -283,7 +276,7 @@ flex-wrap:wrap;
 
 .explorepic {
   display:flex;
-  font-family: Quicksand;
+  font-family: 'Raleway', sans-serif;
   font-size: 30px;
   width:100%;
   max-width: 240px;
