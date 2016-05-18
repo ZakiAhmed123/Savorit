@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :orders
+  has_many :comments
   acts_as_followable
   acts_as_follower
   attachment :photo

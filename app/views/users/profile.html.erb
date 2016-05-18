@@ -38,8 +38,12 @@
 <%= @user.first_name %>
 <%= @user.last_name %>
 @<%= @user.user_name %>
-<%= link_to "Follow", unfollow_path(id: @user.id), class: "followbtn", method: :post%>
-<%= link_to "Unfollow", follow_path(id: @user.id), class: "followbtn", method: :post%></p>
+<% if @current_user && @current_user.following?(@user)%>
+<div class="followbtn"><em><%= link_to "Following", unfollow_path(id: @user.id), class:'follows'%></em></div>
+<% elsif @current_user %>
+<div class="followbtn"><em><center><%= link_to "Follow", follow_path(id: @user.id), class:'follows'%></center></em></div>
+<% end %>
+</p>
 </center>
 </div>
 

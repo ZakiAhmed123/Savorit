@@ -305,6 +305,7 @@ color:black;
 color:white;
 font-size: 18px;
 border-radius: 8px;
+padding-top: 5px;
 }
 
 .followbtn:hover {
@@ -328,4 +329,9 @@ border-radius: 8px;
   background-color: #2ECC71;
   flex-direction: column;
   width:100%;
+}
+
+.follows {
+  color:white;
+  text-decoration: none;
 }

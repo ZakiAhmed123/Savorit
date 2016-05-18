@@ -56,5 +56,17 @@ end
   end
   end
 
+  def create_comment
+    @post = Post.find_by id: params[:id]
+    @comment = Comment.new params.require(:comment).permit(:comment)
+    @comment.post_id = @post.id
+
+    if @comment.save
+      redirect_to explore_path
+    else
+      render :view
+    end
+  end
+
 
   end
