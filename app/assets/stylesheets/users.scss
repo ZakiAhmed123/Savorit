@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'San Francisco';
+  src: url('SanFranciscoDisplay-Semibold.otf');
+}
 html {
   height: 100%;
 }
@@ -14,11 +17,12 @@ body {
   flex-wrap: wrap;
 }
 
-.subtitle {
-  font-family: 'Raleway', sans-serif;
-  font-size: 35px;
-  color:#C0392B;
-  line-height: 75px;
+.feed-subtitle {
+  color:white;
+  font-family:Raleway;
+  line-height: 80px;
+  font-size: 30px;
+  margin-right: 20px;
 }
 // NAVIGATION BAR
 nav p {
@@ -32,14 +36,13 @@ nav p {
 .catchphrase i:hover{
 color:white;
 }
-.title {
-  font-family: 'League Script', cursive;
-  line-height: 83px;
-  margin-left: 8px;
+
+.feed-title {
+  color:white;
+  font-family: Raleway;
+  line-height: 80px;
+  margin-left: 20px;
   text-decoration: none;
-  color: #C0392B;
-  font-size: 50px;
-  width:50%;
 }
 .title:hover {
   color: white;
@@ -63,11 +66,11 @@ color:white;
   width:20%;
 }
 .icons i {
-  color: #C0392B;
+  color: white;
   line-height: 60px;
 }
 .icons i:hover {
-  color: white;
+  color: #C0392B;
 }
 .explore {
   line-height: 75px;
@@ -77,6 +80,12 @@ color:white;
 }
 .explore i:hover {
   color: white;
+}
+
+.explore-img-header {
+  margin-top: 80px;
+  width:100%;
+  max-height:80%;
 }
 // PHOTO FEED
 .container {
@@ -106,21 +115,23 @@ color:white;
 }
 
 .feedpic {
-  width:100%; max-width: 420px;
+  width:100%;
+  max-width: 600px;
   height:100%;
-  max-height: 500px;
+  max-height: 800px;
   align-self: center;
 }
-.feedpic:hover {
-  transform: scale(1.1, 1.1);
-  opacity: 1;
-}
+
 .feedpiccontainer {
   display:flex;
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: 'Raleway', sans-serif;
+  padding-top:50px;
+  width:100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .feedpicfooter {
@@ -134,8 +145,8 @@ color:white;
   max-width: 340px;
 }
 .buy {
-  width:90px;
-  height:45px;
+  width:130px;
+  height:50px;
   border-radius: 5px;
   border:2px solid #2ECC71;
   font-family: 'Raleway', sans-serif;
@@ -162,16 +173,39 @@ color:white;
 .edit_container {
   display:flex;
   flex-wrap: wrap;
+  padding-top: 100px;
+  justify-content: center;
+  padding-bottom: 100px;
 }
 
 #image-cropper {
-  width:100%;
-  max-width: 640px;
+  width:20%;
   font-family: 'Raleway', sans-serif;
 }
 .imageform {
+  width:50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#form_id {
   width:100%;
-  max-width: 640px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form_id input {
+  width:100%;
+}
+
+.imageform p {
+  font-family: Raleway;
+  font-size: 30px;
+  text-align: center;
+  margin:0 0 10px 0;
 }
 
 #description {
@@ -257,6 +291,9 @@ background-color: white;
 .profilecontainer {
   display:flex;
   flex-direction: column;
+  padding-top: 100px;
+  margin-bottom: 100px;
+
 }
 
 .profileheader {
@@ -267,6 +304,8 @@ background-color: white;
 .profilepiccontainer{
 display:flex;
 flex-wrap:wrap;
+justify-content: center;
+align-items: center;
 }
 
 .profileimages {
@@ -277,9 +316,8 @@ flex-wrap:wrap;
 .explorepic {
   display:flex;
   font-family: 'Raleway', sans-serif;
-  font-size: 30px;
   width:100%;
-  max-width: 240px;
+  max-width: 300px;
   flex-direction: column;
   border:2px solid white;
 }
@@ -287,6 +325,7 @@ flex-wrap:wrap;
 .explorename{
 text-decoration: none;
 color:black;
+font-size: 20px;
 }
 
 .explorename:hover {
@@ -295,7 +334,32 @@ color:black;
 .explorecontainer {
   display:flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
+.explore-image-container {
+  height:48%;
+  padding-top: 60px;
+}
+
+  .explore-image-text {
+    position:absolute;
+    bottom:40%;
+    left:4%;
+    color:white;
+    font-family: Raleway;
+    font-size: 40px;
+    width:50%;
+  }
+
+.explore-image {
+  height:100%;
+  width:100%;
+  position:relative;
+}
+
+
+
 
 .followbtn {
   text-decoration: none;
@@ -333,4 +397,91 @@ padding-top: 5px;
 .follows {
   color:white;
   text-decoration: none;
+}
+
+.explorepic img {
+  width:100%;
+  height:100%;
+}
+
+.cropit {
+  position:relative;
+  overflow: hidden;
+  margin:10px;
+  background-color: #5BC0DE;
+  border-radius: 3px;
+  border: 1px solid #5BC0DE;
+  font-size: 30px;
+  font-family: Aileron;
+  color:white;
+  padding:5px 10px 5px 10px;
+  letter-spacing: 5px;
+}
+
+.fileUpload {
+  position:relative;
+  overflow: hidden;
+  margin:10px;
+  background-color: #5BC0DE;
+  border-radius: 3px;
+  border: 1px solid #5BC0DE;
+  font-size: 30px;
+  font-family: Aileron;
+  color:white;
+  padding:5px 10px 5px 10px;
+  letter-spacing: 5px;
+  width:100%;
+  max-width: 310px;
+}
+
+.fileUpload:hover {
+  background-color: white;
+  color:#5BC0DE;
+}
+
+.fileUpload input.cropit-image-input {
+  position: absolute;
+  top:0;
+  right:0;
+  margin:0;
+  padding:0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.fileUpload span {
+  font-family: Raleway;
+}
+
+// MEDIA SCREENS
+
+@media only screen and (max-width: 415px){
+
+  .feed-subtitle{
+    width:0px;
+    display:none;
+  }
+  #navfeed {
+    height:100%;
+    max-height:50px;
+  }
+  .feed-title {
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    width:100%;
+  }
+
+  .explorepic img {
+    width:100%;
+  }
+
+  .imageform p {
+    font-size: 25px;
+    margin-top: 20px;
+    border-top: 3px solid black;
+    padding-top: 15px;
+  }
 }

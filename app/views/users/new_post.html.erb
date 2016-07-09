@@ -1,8 +1,9 @@
 <nav id="navfeed">
 
-  <div class="title"><strong>Savorit</strong>
+  <div class="feed-title">
+    Savor it
   </div>
-  <div class="subtitle">
+  <div class="feed-subtitle">
     Feed The Craving
   </div>
 </nav>
@@ -10,57 +11,73 @@
 <div id="footer">
 
   <div class="icons">
-  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+    <center>
+      <%= link_to posts_path(id: @current_user.id) do %>
+      <i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
   </div>
 
   <div class="icons">
-  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+    <center>
+      <%= link_to explore_path do%>
+      <i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
   </div>
 
   <div class="icons">
-    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+    <center>
+      <%= link_to new_post_path(id: @current_user.id) do %>
+      <i class="fa fa-camera-retro fa-2x"></i><%end%></center>
   </div>
 
   <div class="icons">
-  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+    <center>
+      <%= link_to cart_path(id: @current_user.id) do %>
+      <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
   </div>
 
-    <div class="icons">
-      <center> <%= link_to sign_out_path do %>
+  <div class="icons">
+    <center>
+      <%= link_to sign_out_path do %>
       <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
-    </div>
+  </div>
 </div>
 
 <div class="edit_container">
-<div id="image-cropper">
-  ​
-  <div class="image-editor">
-    <center>
-    <input type="file" class="cropit-image-input">
-    <div class="cropit-preview"></div>
-    <div class="image-size-label">
-      Resize image
+  <div id="image-cropper">
+    ​
+    <div class="image-editor">
+      <center>
+        <div class="fileUpload">
+          <span>
+            Upload
+          </span>
+          <input type="file" class="cropit-image-input">
+        </div>
+        <div class="cropit-preview"></div>
+        <div class="image-size-label">
+          Resize image
+        </div>
+        <input type="range" class="cropit-image-zoom-input">
+        <button class="rotate-ccw">
+          <i class="fa fa-undo fa-2x" aria-hidden="true"></i>
+        </button>
+        <button class="rotate-cw">
+          <i class="fa fa-repeat fa-2x" aria-hidden="true"></i>
+        </button>
+        <center></div>
+      </div>
+
+      <div class="imageform">
+        <p>
+          Let them know the details
+        </p>
+          <form action="#" method="post" name="form_name" id="form_id" class="form_class">
+            <input type="text" name="description" id="description" placeholder="Thoughts?"/>
+            <input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
+            <input type="text" name="name" id="name" placeholder="What did you order?"/>
+            <input type="text" name="culture" id="culture" placeholder="Culture?"/>
+            <input type="text" name="price" id="price" placeholder="Price?"/>
+            <button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
+          </form>
+      </div>
+
     </div>
-    <input type="range" class="cropit-image-zoom-input">
-    <button class="rotate-ccw">
-      <i class="fa fa-undo fa-2x" aria-hidden="true"></i>
-    </button>
-    <button class="rotate-cw">
-      <i class="fa fa-repeat fa-2x" aria-hidden="true"></i>
-    </button>
-    <center>
-</div>
-</div>
-
-<div class="imageform">
-<center><form action="#" method="post" name="form_name" id="form_id" class="form_class">
-<input type="text" name="description" id="description" placeholder="Thoughts?"/>
-<input type="text" name="location" id="location" placeholder="Where did you eat this at?"/>
-<input type="text" name="name" id="name" placeholder="What did you order?"/>
-<input type="text" name="culture" id="culture" placeholder="Culture?"/>
-<input type="text" name="price" id="price" placeholder="How much did this cost?"/>
-<button class="cropit-save" name="submit_class" id="btn_class" value="Submit by Class">Finished!</button>
-</form></center>
-</div>
-
-</div>

@@ -1,8 +1,9 @@
 <nav id="navfeed">
 
-  <div class="title"><strong>Savorit</strong>
+  <div class="feed-title">
+    Savor it
   </div>
-  <div class="subtitle">
+  <div class="feed-subtitle">
     Feed The Craving
   </div>
 </nav>
@@ -10,32 +11,45 @@
 <div id="footer">
 
   <div class="icons">
-  <center>  <%= link_to posts_path(id: @current_user.id) do %><i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
+    <center>
+      <%= link_to posts_path(id: @current_user.id) do %>
+      <i class="fa fa-home fa-2x" aria-hidden="true"></i><%end%></center>
   </div>
 
   <div class="icons">
-  <center> <%= link_to explore_path do%><i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
+    <center>
+      <%= link_to explore_path do%>
+      <i class="fa fa-compass fa-2x" aria-hidden="true"></i><%end%></center>
   </div>
 
   <div class="icons">
-    <center> <%= link_to new_post_path(id: @current_user.id) do %><i class="fa fa-camera-retro fa-2x"></i><%end%></center>
+    <center>
+      <%= link_to new_post_path(id: @current_user.id) do %>
+      <i class="fa fa-camera-retro fa-2x"></i><%end%></center>
   </div>
 
   <div class="icons">
-  <center>   <%= link_to cart_path(id: @current_user.id) do %><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
+    <center>
+      <%= link_to cart_path(id: @current_user.id) do %>
+      <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><%end %></center>
   </div>
 
-    <div class="icons">
-      <center> <%= link_to sign_out_path do %>
+  <div class="icons">
+    <center>
+      <%= link_to sign_out_path do %>
       <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%end%></center>
-    </div>
+  </div>
+</div>
+<div class="explore-image-container">
+<%= image_tag 'hopdoddy2.jpg', class:'explore-image' %>
+  <p class="explore-image-text">
+    <i class="fa fa-search" aria-hidden="true"></i> Food You Might Like
+  </p>
 </div>
 <div class="explorecontainer">
-<% @posts.each do |f|%>
-<div class="explorepic">
-<%= link_to user_path(id: f.user), class:"explorename" do %><p><%= f.user.first_name %>
-<%= f.user.last_name %></p><%end%>
-<%= image_tag attachment_url(f, :photo, :fill, 200, 200, format: "jpg") %>
-</div>
-<%end %>
-</div>
+  <% @posts.each do |f|%>
+  <div class="explorepic">
+      <%= link_to user_path(id: f.user) do%><%= image_tag attachment_url(f, :photo, :fill, 300, 300, format: "jpg") %><%end%>
+    </div>
+    <%end %>
+  </div>

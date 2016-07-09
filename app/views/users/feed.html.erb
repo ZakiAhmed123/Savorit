@@ -1,8 +1,8 @@
 <nav id="navfeed">
 
-  <div class="title"><strong>Savorit</strong>
+  <div class="feed-title">Savor it
   </div>
-  <div class="subtitle">
+  <div class="feed-subtitle">
     Feed The Craving
   </div>
 </nav>
@@ -42,7 +42,7 @@
         </p>
     </div>
     <div class="picdiv">
-  <center><%= image_tag attachment_url(f, :photo, :fill, 400, 500, format: "jpg"), class:"feedpic" %></center>
+      <%= image_tag attachment_url(f, :photo, :fill, 600,800, format: "jpg"), class:"feedpic" %>
   </div>
   <div class="feedpicfooter">
       <p><%= f.description%></p>
@@ -50,4 +50,5 @@
       <p>culture:<%= f.culture %></p>
   </div>
     <%end %>
+</div>
 </div>
