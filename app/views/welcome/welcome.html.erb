@@ -1,38 +1,155 @@
 <nav>
-  <p class="welcome"> Savor it </p>
+  <p class="welcome">
+    Savor it
+  </p>
   <div class="login-container">
-  <p id="login"><%= link_to sign_in_path, class:"login" do %><button id="signin"> Sign In</button> <% end %></p>
-  <p><%= link_to sign_up_path, class:"login" do %><button id="signup"> Sign Up</button><% end %></p>
-</div>
+    <p id="login"><%= link_to sign_in_path, class:"login" do %>
+      <button id="signin">
+        Sign In</button>
+      <% end %></p>
+    <p><%= link_to sign_up_path, class:"login" do %>
+      <button id="signup">
+        Sign Up</button><% end %></p>
+  </div>
 </nav>
-<div class="image-container">
-  <%= image_tag 'ramen.jpg', class:"image"%>
-  <%= image_tag 'burrito.jpg', class:"image"%>
-  <%= image_tag 'waffle.jpg', class:"image"%>
-  <%= image_tag 'burger.jpg', class:"image"%>
+<div class="welcome-image-container">
+  <%= image_tag 'shakeshack.jpg', class:'welcome-image' %>
+  <p class="welcome-image-text">
+    Find local restaurants your friends are eating at and order it straight to your doorstep.
+  </p>
 </div>
 <div class="how-to">
   <div class="heading">
-  <center><p class=heading-title>How to Savor It </p></center>
-<center><p class="subhead">Getting the food you didnt even know you wanted is easier than ever. </p></center>
+    <center>
+      <p class=heading-title>How to Savor It
+      </p>
+    </center>
+    <center>
+      <p class="how-subhead">Exploring food has never been easier, Having it in front of you has never been faster.
+      </p>
+    </center>
+  </div>
+  <center>
+    <div class="directions-container">
+      <div class="directions" style="margin-left:20px;">
+        <center>
+          <i class="fa fa-search fa-3x" aria-hidden="true"></i>
+          <p class="subhead">The Search
+          </p>
+          <p class="info">Connect with friends and look through what everyone is eating.</p>
+        </center>
+      </div>
+      <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
+      <div class="directions">
+        <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+        <p class="subhead">The Find
+        </p>
+        <p class="info">Decide what you want to eat and checkout.</p>
+      </div>
+      <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
+      <div class="directions">
+        <i class="fa fa-car fa-3x" aria-hidden="true"></i>
+        <p class="subhead">The Delivery
+        </p>
+        <p class="info">
+          Get comfy because the food comes to you.</p>
+      </div>
+    </div>
+  </center>
 </div>
-<center><div class="directions-container">
-<div class="directions">
-  <center><i class="fa fa-search fa-3x" aria-hidden="true"></i>
-  <p class="subhead">The Search </p>
-  <p class="info">Connect with friends and look through what everyone is eating.</p></center>
+<div class="munch-container">
+  <p class='munch-title'>
+    Munches and Mumbles
+  </p>
+  <div class="review-container">
+
+    <div class="review">
+      <%= image_tag 'noor.png', class: 'reviewer-image' %>
+      <p>
+        @Savorit You make fat kids on the inside and outside happy. Thanks!
+      </p>
+      <p style="font-weight:bold;">
+        @Noora_The_Explora
+      </p>
+    </div>
+
+    <div class="review">
+      <%= image_tag 'zaki.jpg', class: 'reviewer-image' %>
+      <p>
+        @Savorit has satisfied my late night cravings too many times. #FatKidsUnite
+      </p>
+      <p style="font-weight:bold;">
+        @Zbreezy
+      </p>
+    </div>
+
+    <div class="review">
+      <%= image_tag 'sarah.jpg', class: 'reviewer-image' %>
+      <p>
+        Just stalking what my friends eat because food is my one true love. Time to order thanks @Savorit
+      </p>
+      <p style="font-weight:bold;">
+        @SK_the_Don
+      </p>
+    </div>
+
+    <div class="review">
+      <%= image_tag 'mohsin.jpg', class: 'reviewer-image' %>
+      <p>
+        The daily struggle of wondering what to eat but as usual @Savorit came to the rescue. #LifeChanging
+      </p>
+      <p style="font-weight:bold;">
+        @Hungry_Beard
+      </p>
+    </div>
+
+  </div>
+
 </div>
-<i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
-<div class="directions">
-  <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
-  <p class="subhead">The Find </p>
-  <p class="info">Decide what you want to eat and checkout.</p>
+<div class="Why-container">
+  <p class="why-title">
+    Why find food with SavorIt
+  </p>
+  <div class="block-container">
+  <div class="block">
+    <i class="fa fa-diamond fa-3x" aria-hidden="true"></i>
+    <p class="why-title">
+      Diamond in the Rough
+      </p>
+    <p class="why-info">
+      Find rare places to eat
+    </p>
+  </div>
+
+  <div class="block">
+    <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true"></i>
+    <p class="why-title">
+      Better Finds
+      </p>
+    <p class="why-info">
+      Your friends give recommendations, thats the best part.
+    </p>
+  </div>
+
+  <div class="block">
+    <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+    <p class="why-title">
+      Eat Good
+      </p>
+    <p class="why-info">
+      Comfortably eat at home knowing you moved 0.0 inches for this food.
+    </p>
+  </div>
 </div>
-<i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i>
-<div class="directions">
-<i class="fa fa-car fa-3x" aria-hidden="true"></i>
-<p class="subhead">The Delivery </p>
-<p class="info"> Get comfy because the food comes to you.</p>
 </div>
-</div></center>
+  <div class="about-container">
+    <div class="about-title">
+      About SavorIt
+    </div>
+    <div class="about-info">
+      Ever unsure about what to eat? Always scrolling through Yelp not knowing what to truly expect? Fear not, SavorIt is here</br></br> SavorIt helps you find and order food from wherever you are based on what your friends are ordering. How it works: You scroll through your food feed and see what your friends are eating. When you find what you're looking for, you can order what your friends are eating straight to any address you want in your local area.
+    </div>
+  </div>
+<div class="footer">
+  <p>&copy; SavorIt All Rights Reserved | created by: Zaki Ahmed </br>Check out more work at <a href="www.zakiahmed.org">www.zakiahmed.org</a></p>
 </div>
